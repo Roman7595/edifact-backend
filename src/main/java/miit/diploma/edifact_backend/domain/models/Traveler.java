@@ -161,6 +161,7 @@ public class Traveler extends BaseModel{
 
 
     public void setOperation(String operation) {
+
         this.operation = operation;
     }
 
@@ -245,34 +246,59 @@ public class Traveler extends BaseModel{
     }
 
     public void setMessage(Message message) {
+        if (message == null) {
+            throw new IllegalArgumentException("Message must not be null");
+        }
         this.message = message;
     }
 
     public void setSirname(String sirname) {
+        if (sirname == null) {
+            throw new IllegalArgumentException("Sirname must not be null");
+        }
         this.sirname = sirname;
     }
 
     public void setDocumentCountry(String documentCountry) {
+        if (documentCountry == null) {
+            throw new IllegalArgumentException("Document country must not be null");
+        }
         this.documentCountry = documentCountry;
     }
 
     public void setDocumentType(String documentType) {
+        if (documentType == null) {
+            throw new IllegalArgumentException("Document type must not be null");
+        }
         this.documentType = documentType;
     }
 
     public void setDocumentNumber(String documentNumber) {
+        if (documentNumber == null) {
+            throw new IllegalArgumentException("Document number must not be null");
+        }
         this.documentNumber = documentNumber;
     }
 
     public void setFileName(String fileName) {
+        if (fileName == null) {
+            throw new IllegalArgumentException("File name number must not be null");
+        }
+
         this.fileName = fileName;
     }
 
     public void setFileType(String fileType) {
+        if (fileType == null) {
+            throw new IllegalArgumentException("File type number must not be null");
+        }
         this.fileType = fileType;
     }
 
     public void setFileDatetime(LocalDateTime fileDatetime) {
+        if (fileDatetime == null) {
+            throw new IllegalArgumentException("File datetime number must not be null");
+        }
         this.fileDatetime = fileDatetime;
     }
 }

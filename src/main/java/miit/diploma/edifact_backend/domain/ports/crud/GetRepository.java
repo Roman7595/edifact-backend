@@ -1,4 +1,4 @@
-package miit.diploma.edifact_backend.domain.ports.repos;
+package miit.diploma.edifact_backend.domain.ports.crud;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,8 +1,17 @@
 package miit.diploma.edifact_backend.application.dto;
 
+import miit.diploma.edifact_backend.domain.models.Traveler;
+
 public class TravelerResponse {
     private long id;
     private String name;
+
+    public static TravelerResponse from(Traveler traveler){
+        return new TravelerResponse(
+                traveler.getId(),
+                traveler.getName()
+        );
+    }
 
     public TravelerResponse(long id, String name) {
         setId(id);

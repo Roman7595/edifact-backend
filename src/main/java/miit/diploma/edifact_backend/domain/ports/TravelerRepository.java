@@ -1,13 +1,8 @@
 package miit.diploma.edifact_backend.domain.ports;
 
 import miit.diploma.edifact_backend.domain.models.Traveler;
+import miit.diploma.edifact_backend.domain.ports.crud.GetRepository;
+import miit.diploma.edifact_backend.domain.ports.crud.SaveRepository;
 
-import java.util.List;
-import java.util.Optional;
-
-public interface TravelerRepository {
-    Traveler save(Traveler traveler);
-    Optional<Traveler> findById(Long id);
-    List<Traveler> getAll();
-
+public interface TravelerRepository extends SaveRepository<Long, Traveler>, GetRepository<Long,Traveler> {
 }

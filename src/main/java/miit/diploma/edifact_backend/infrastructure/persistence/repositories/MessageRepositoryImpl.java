@@ -45,6 +45,14 @@ public class MessageRepositoryImpl implements MessageRepository {
     }
 
     @Override
+    public List<Message> saveAll(List<Message> entities) {
+        List<MessageEntity> messageEntityList = entities.stream().map(messageEntityMapper::modelToEntity).toList();
+        messageEntityList = crudRepository.saveAll(messageEntityList);
+
+        return messageEntityList.stream().map(messageEntityMapper::entityToModel).toList();
+    }
+
+    @Override
     public Message save(Message entity) {
         MessageEntity messageEntity = messageEntityMapper.modelToEntity(entity);
         messageEntity = crudRepository.save(messageEntity);

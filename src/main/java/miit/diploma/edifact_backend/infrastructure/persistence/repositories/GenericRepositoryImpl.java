@@ -3,9 +3,9 @@ package miit.diploma.edifact_backend.infrastructure.persistence.repositories;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import miit.diploma.edifact_backend.domain.ports.repos.GetRepository;
-import miit.diploma.edifact_backend.domain.ports.repos.SaveRepository;
-import miit.diploma.edifact_backend.domain.ports.repos.UpdateRepository;
+import miit.diploma.edifact_backend.domain.ports.crud.GetRepository;
+import miit.diploma.edifact_backend.domain.ports.crud.SaveRepository;
+import miit.diploma.edifact_backend.domain.ports.crud.UpdateRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -33,6 +33,14 @@ public class GenericRepositoryImpl<I,T> implements GetRepository<I,T>, SaveRepos
     public T save(T entity){
         entityManager.persist(entity);
         return entity;
+    }
+
+    @Transactional
+    public List<T> saveAll(List<T> entities){
+        for (T item : entities){
+            entityManager.persist(item);
+        }
+        return entities;
     }
 
     @Transactional

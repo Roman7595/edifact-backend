@@ -19,15 +19,7 @@ public class GetMainPageUseCase {
 
     public List<TravelerResponse> execute(){
         // TODO: add pagination
-        List<Traveler> travelerList = travelerRepository.getAll();
-        List<TravelerResponse> travelerResponseList = new ArrayList<>(travelerList.size());
-        for (Traveler traveler : travelerList){
-            TravelerResponse travelerResponse = new TravelerResponse(
-                    traveler.getId(),
-                    traveler.getName()
-            );
-            travelerResponseList.add(travelerResponse);
-        }
-        return travelerResponseList;
+
+        return travelerRepository.findAll(Traveler.class).stream().map(TravelerResponse::from).toList();
     }
 }

@@ -11,20 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/v1/client")
 public class ClientController {
-    private final GetMainPageUseCase getMainPageUsecase;
 
-    @Autowired
-    public ClientController(GetMainPageUseCase getMainPageUsecase) {
-        this.getMainPageUsecase = getMainPageUsecase;
+    private final GetMainPageUseCase getMainPageUseCase;
+
+    public ClientController(GetMainPageUseCase getMainPageUseCase) {
+        this.getMainPageUseCase = getMainPageUseCase;
     }
 
     @GetMapping("/")
-    public String getAllTravelers(Model model){
-        List<TravelerResponse> list = this.getMainPageUsecase.execute();
-        model.addAttribute("traveler_list", list);
-        return "main";
+    public String index(Model model) {
+        model.addAttribute("message", "Привет из FreeMarker!");
+        return "index";
     }
-
 }
