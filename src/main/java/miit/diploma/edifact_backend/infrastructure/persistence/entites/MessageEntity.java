@@ -23,7 +23,7 @@ public class MessageEntity extends BaseEntity {
     }
 
 
-    @Column(name="edifact", nullable=false)
+    @Column(name="edifact", columnDefinition = "TEXT", nullable=false)
     public String getEdifact() {
         return edifact;
     }

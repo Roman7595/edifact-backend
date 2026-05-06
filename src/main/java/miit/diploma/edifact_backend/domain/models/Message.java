@@ -25,9 +25,6 @@ public class Message extends BaseModel {
 
 
     public void setStructure(Map<String, Object> structure) {
-        if(structure == null){
-            throw new RuntimeException("Structure must not be null");
-        }
         this.structure = structure;
     }
 
