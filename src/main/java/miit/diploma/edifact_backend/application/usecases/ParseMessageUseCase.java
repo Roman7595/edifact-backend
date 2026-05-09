@@ -38,7 +38,6 @@ public class ParseMessageUseCase {
             log.error("Parse Error", e);
         }
 
-
     }
 
 //    List<Message> messageList = new ArrayList<>(messages.size());

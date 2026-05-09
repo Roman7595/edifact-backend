@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
+//@RequestMapping("/api/v1/client")
 public class ClientController {
 
     private final GetMainPageUseCase getMainPageUseCase;
@@ -21,7 +22,8 @@ public class ClientController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("message", "Привет из FreeMarker!");
+        List<TravelerResponse> travelerResponseList = getMainPageUseCase.execute();
+            model.addAttribute("travelerList", travelerResponseList);
         return "index";
     }
 }

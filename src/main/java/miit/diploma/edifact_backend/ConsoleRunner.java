@@ -25,11 +25,15 @@ public class ConsoleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... strings) {
-        long id = parseMessageUseCase.execute(new MessageToParseDTO("message"));
+//        parseMessageUseCase.execute(new MessageToParseDTO("message"));
+//
+//        HashMap<String,Object> structure = new HashMap<>();
+//
+//        structure.put("id",1);
+//        structure.put("name","sadsaname");
+//        saveParsedMessageUseCase.execute(new ParsedMessageResponse(1, structure));
 
-        saveParsedMessageUseCase.execute(new ParsedMessageResponse(id, new HashMap<>()));
-
-        System.out.println(getMainPageUseCase.execute());
+//        System.out.println("-------" +getMainPageUseCase.execute());
     }
 
 

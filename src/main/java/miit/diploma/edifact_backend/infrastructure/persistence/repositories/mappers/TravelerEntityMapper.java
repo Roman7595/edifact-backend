@@ -58,6 +58,7 @@ public class TravelerEntityMapper implements EntityMapper<Traveler, TravelerEnti
     }
 
     public Traveler entityToModel(TravelerEntity travelerEntity){
+
         Message message = messageEntityMapper.entityToModel(travelerEntity.getMessage());
 
         Traveler traveler = new Traveler(

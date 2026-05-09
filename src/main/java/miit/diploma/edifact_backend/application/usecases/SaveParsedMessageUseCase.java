@@ -25,11 +25,11 @@ public class SaveParsedMessageUseCase {
 
         Message message = messageRepository.findById(parsedMessage.id(), Message.class).orElseThrow(RuntimeException::new);
         message.setStructure(parsedMessage.structure());
-        List<Traveler> travelerList = message.extractTravelers();
         messageRepository.update(message);
 
-        for (Traveler traveler : travelerList){
-            travelerRepository.save(traveler);
-        }
+        List<Traveler> travelerList = message.extractTravelers();
+
+        travelerRepository.saveAll(travelerList);
+
     }
 }

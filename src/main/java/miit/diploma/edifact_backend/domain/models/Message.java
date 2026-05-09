@@ -1,12 +1,15 @@
 package miit.diploma.edifact_backend.domain.models;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
 public class Message extends BaseModel {
 
     private String  edifact;
-    private Map<String, Object> structure;
+    private JsonNode structure;
 
     protected Message() {
     }
@@ -19,12 +22,12 @@ public class Message extends BaseModel {
         return edifact;
     }
 
-    public Map<String, Object> getStructure() {
+    public JsonNode getStructure() {
         return structure;
     }
 
 
-    public void setStructure(Map<String, Object> structure) {
+    public void setStructure(JsonNode structure) {
         this.structure = structure;
     }
 
@@ -38,8 +41,9 @@ public class Message extends BaseModel {
 
 
     public List<Traveler> extractTravelers() {
-//        logic
-        return List.of();
+        String name = String.valueOf(structure.get("messageHeader").get("referenceNumber"));
+        Traveler traveler = new Traveler(name,name,name,name,name,name, LocalDateTime.now(),this);
+        return List.of(traveler);
     }
 
 }

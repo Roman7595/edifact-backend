@@ -172,7 +172,7 @@ public class TravelerEntity extends BaseEntity {
         return severity;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="message_id")
     public MessageEntity getMessage() {
         return message;

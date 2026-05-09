@@ -1,5 +1,6 @@
 package miit.diploma.edifact_backend.infrastructure.persistence.entites;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -13,7 +14,7 @@ import java.util.Map;
 public class MessageEntity extends BaseEntity {
 
     private String edifact;
-    private Map<String, Object> structure;
+    private JsonNode structure;
 
     protected MessageEntity() {
     }
@@ -30,12 +31,12 @@ public class MessageEntity extends BaseEntity {
 
     @JdbcTypeCode(SqlTypes.JSON)
     @Column(name="structure")
-    public Map<String, Object> getStructure() {
+    public JsonNode getStructure() {
         return structure;
     }
 
 
-    public void setStructure(Map<String, Object> structure) {
+    public void setStructure(JsonNode structure) {
         this.structure = structure;
     }
 

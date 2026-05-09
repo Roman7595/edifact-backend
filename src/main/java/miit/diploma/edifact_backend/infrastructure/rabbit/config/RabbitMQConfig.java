@@ -8,8 +8,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMQConfig {
+    public static final String PARSED_EXCHANGE_NAME = "parsed-message";
+
     public static final String EXCHANGE_NAME = "message-to-parse";
     public static final String ROUTING_KEY_MESSAGE_CREATED = "message.created";
+    public static final String ROUTING_KEY_MESSAGE_PARSED = "message.parsed";
 
     @Bean
     public MessageConverter jsonMessageConverter() {

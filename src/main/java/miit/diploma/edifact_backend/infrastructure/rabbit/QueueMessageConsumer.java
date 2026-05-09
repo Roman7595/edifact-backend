@@ -25,12 +25,11 @@ public class QueueMessageConsumer{
             bindings = @QueueBinding(
 
                     value = @Queue(name = "queue", durable = "true"),
-                    exchange = @Exchange(name = RabbitMQConfig.EXCHANGE_NAME, type = "topic")
+                    exchange = @Exchange(name = RabbitMQConfig.PARSED_EXCHANGE_NAME, type = "topic")
             )
     )
     public void getMessageFromParse(ParsedMessageQueueDTO parsedMessage) {
-//        ParsedMessageQueueDTO structure = objectMapper.readValue(parsedMessage, ParsedMessageQueueDTO.class);
-//        Message message = rabbitMapper.dtoToModel(structure);
+        System.out.println(parsedMessage.id +" !:! "+ parsedMessage.structure);
         saveParsedMessageUsecase.execute(new ParsedMessageResponse(parsedMessage.id, parsedMessage.structure));
     }
 }
