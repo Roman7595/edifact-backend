@@ -23,7 +23,6 @@
             min-height: 100vh;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 64px;
             background: #ffffff;
@@ -76,7 +75,6 @@
             font-size: 12px;
         }
 
-        /* Main Content */
         .main-content {
             flex: 1;
             padding: 24px;
@@ -129,7 +127,6 @@
             background: #2c5282;
         }
 
-        /* Panel */
         .panel {
             background: white;
             border-radius: 8px;
@@ -191,7 +188,6 @@
             border-color: #667eea;
         }
 
-        /* Table */
         .table-container {
             overflow-x: auto;
         }
@@ -283,7 +279,6 @@
             color: #744210;
         }
 
-        /* Icons */
         .icon {
             width: 16px;
             height: 16px;
@@ -294,7 +289,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">A</div>
             

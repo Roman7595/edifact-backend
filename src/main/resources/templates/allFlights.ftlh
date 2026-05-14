@@ -23,7 +23,6 @@
             min-height: 100vh;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 64px;
             background: #ffffff;
@@ -76,7 +75,6 @@
             font-size: 12px;
         }
 
-        /* Main Content */
         .main-content {
             flex: 1;
             padding: 24px;
@@ -129,7 +127,6 @@
             background: #2c5282;
         }
 
-        /* Panel */
         .panel {
             background: white;
             border-radius: 8px;
@@ -191,7 +188,6 @@
             border-color: #667eea;
         }
 
-        /* Table */
         .table-container {
             overflow-x: auto;
         }
@@ -283,7 +279,6 @@
             color: #744210;
         }
 
-        /* Icons */
         .icon {
             width: 16px;
             height: 16px;
@@ -294,7 +289,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">A</div>
 
@@ -313,17 +307,10 @@
                 </svg>
             </div>
             
-            <#--  <div class="nav-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
-                    <path d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1H5a1 1 0 01-1-1v-1zm5-1a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1zm5 0a1 1 0 011-1h1a1 1 0 011 1v1a1 1 0 01-1 1h-1a1 1 0 01-1-1v-1z"/>
-                </svg>
-            </div>  -->
-            
+
             <div class="version">1.1.0</div>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <div class="header">
                 <h1 class="page-title">Travelers</h1>
@@ -374,7 +361,6 @@
             </div>
         </main>
     </div>
-
 
 </body>
 </html>
