@@ -6,6 +6,6 @@ import miit.diploma.edifact_backend.domain.ports.crud.GetRepository;
 import miit.diploma.edifact_backend.domain.ports.crud.SaveRepository;
 
 
-public interface MessageRepository extends GetRepository<Long, Message>, SaveRepository<Long, Message>, UpdateRepository<Long, Message> {
+public interface MessageRepository extends GetRepository<Long, Message>, SaveRepository<Message>, UpdateRepository<Message> {
 
 }

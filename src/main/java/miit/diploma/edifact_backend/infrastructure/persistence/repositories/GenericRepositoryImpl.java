@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class GenericRepositoryImpl<I,T> implements GetRepository<I,T>, SaveRepository<I,T>, UpdateRepository<I,T> {
+public class GenericRepositoryImpl<I,T> {
 
     @PersistenceContext
     private EntityManager entityManager;

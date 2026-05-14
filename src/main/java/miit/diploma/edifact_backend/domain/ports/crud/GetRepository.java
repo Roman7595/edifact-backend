@@ -4,6 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface GetRepository<I,T>{
-    public Optional<T> findById(I id, Class<T> type);
-    public List<T> findAll(Class<T> type);
+    public Optional<T> findById(I id);
+    public List<T> findAll();
 }

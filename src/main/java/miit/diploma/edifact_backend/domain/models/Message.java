@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+
 
 public class Message extends BaseModel {
 
@@ -43,6 +45,10 @@ public class Message extends BaseModel {
     public List<Traveler> extractTravelers() {
         String name = String.valueOf(structure.get("messageHeader").get("referenceNumber"));
         Traveler traveler = new Traveler(name,name,name,name,name,name, LocalDateTime.now(),this);
+
+        String[] list = {null,"1","2"};
+        Random random = new Random();
+        traveler.setFlightNumber(list[random.nextInt(list.length)]);
         return List.of(traveler);
     }
 

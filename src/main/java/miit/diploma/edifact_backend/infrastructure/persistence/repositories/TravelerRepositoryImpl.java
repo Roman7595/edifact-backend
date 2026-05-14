@@ -33,7 +33,7 @@ public class TravelerRepositoryImpl implements TravelerRepository {
     }
 
     @Override
-    public Optional<Traveler> findById(Long id, Class<Traveler> type) {
+    public Optional<Traveler> findById(Long id) {
         Optional<TravelerEntity> travelerEntity = crudRepository.findById(id, TravelerEntity.class);
         Traveler traveler = null;
         if (travelerEntity.isPresent()){
@@ -45,7 +45,7 @@ public class TravelerRepositoryImpl implements TravelerRepository {
     }
 
     @Override
-    public List<Traveler> findAll(Class<Traveler> type) {
+    public List<Traveler> findAll() {
         List<TravelerEntity> travelerEntityList = crudRepository.findAll(TravelerEntity.class);
         List<Traveler> travelerList = new ArrayList<>(travelerEntityList.size());
         for(TravelerEntity travelerEntity: travelerEntityList){

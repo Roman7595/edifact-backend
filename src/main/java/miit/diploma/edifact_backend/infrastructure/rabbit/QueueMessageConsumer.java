@@ -25,7 +25,8 @@ public class QueueMessageConsumer{
             bindings = @QueueBinding(
 
                     value = @Queue(name = "queue", durable = "true"),
-                    exchange = @Exchange(name = RabbitMQConfig.PARSED_EXCHANGE_NAME, type = "topic")
+                    exchange = @Exchange(name = RabbitMQConfig.PARSED_EXCHANGE_NAME, type = "topic"),
+                    key = "message.parsed"
             )
     )
     public void getMessageFromParse(ParsedMessageQueueDTO parsedMessage) {

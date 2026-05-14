@@ -23,7 +23,7 @@ public class SaveParsedMessageUseCase {
 
     public void execute(ParsedMessageResponse parsedMessage){
 
-        Message message = messageRepository.findById(parsedMessage.id(), Message.class).orElseThrow(RuntimeException::new);
+        Message message = messageRepository.findById(parsedMessage.id()).orElseThrow(RuntimeException::new);
         message.setStructure(parsedMessage.structure());
         messageRepository.update(message);
 

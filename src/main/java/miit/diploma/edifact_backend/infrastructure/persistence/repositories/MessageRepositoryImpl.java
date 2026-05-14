@@ -23,7 +23,7 @@ public class MessageRepositoryImpl implements MessageRepository {
     }
 
     @Override
-    public Optional<Message> findById(Long id, Class<Message> type) {
+    public Optional<Message> findById(Long id) {
 
         Optional<MessageEntity> messageEntity = crudRepository.findById(id,MessageEntity.class);
         Message message = null;
@@ -35,7 +35,7 @@ public class MessageRepositoryImpl implements MessageRepository {
     }
 
     @Override
-    public List<Message> findAll(Class<Message> type) {
+    public List<Message> findAll() {
         List<MessageEntity> messageEntityList = crudRepository.findAll(MessageEntity.class);
         List<Message> messageList = new ArrayList<>(messageEntityList.size());
         for (MessageEntity messageEntity : messageEntityList){

@@ -5,21 +5,22 @@ import miit.diploma.edifact_backend.domain.models.Traveler;
 import miit.diploma.edifact_backend.domain.ports.TravelerRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
-public class GetMainPageUseCase {
+public class GetAllFlightsUseCase {
 
     private final TravelerRepository travelerRepository;
 
-    public GetMainPageUseCase(TravelerRepository travelerRepository) {
+    public GetAllFlightsUseCase(TravelerRepository travelerRepository) {
         this.travelerRepository = travelerRepository;
     }
 
-    public List<TravelerResponse> execute(){
+    public Map<String, Long> execute(){
         // TODO: add pagination
 
-        return travelerRepository.findAll(Traveler.class).stream().map(TravelerResponse::from).toList();
+        return travelerRepository.findAll().stream().filter(Traveler::hasFlight).collect(Collectors.groupingBy(Traveler::getFlightNumber,Collectors.counting()));
     }
 }

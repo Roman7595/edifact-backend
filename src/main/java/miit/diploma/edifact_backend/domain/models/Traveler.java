@@ -301,4 +301,7 @@ public class Traveler extends BaseModel{
         }
         this.fileDatetime = fileDatetime;
     }
+    public boolean hasFlight(){
+        return flightNumber != null;
+    }
 }
